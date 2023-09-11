@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Ean-Gb-fLj">
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21679"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="Stopwatch" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="00.00.00" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wmp-9C-Waq">
+                                <rect key="frame" x="10" y="203" width="373" height="115"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="115" id="7F9-T6-DGB"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="37"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SlJ-2v-IA5">
+                                <rect key="frame" x="159" y="444" width="75" height="75"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="75" id="MjQ-CX-3pE"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                <state key="normal" title="Button" image="icons8-play-94"/>
+                                <state key="selected" image="icons8-pause-94"/>
+                                <connections>
+                                    <action selector="playpauseBtn:" destination="BYZ-38-t0r" eventType="touchUpInside" id="9pU-u7-ZPO"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                        <color key="backgroundColor" systemColor="labelColor"/>
+                        <constraints>
+                            <constraint firstItem="wmp-9C-Waq" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="100" id="HI3-7X-qQ7"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="SlJ-2v-IA5" secondAttribute="bottom" constant="299" id="W6h-c0-d34"/>
+                            <constraint firstItem="wmp-9C-Waq" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="bLF-JR-pRP"/>
+                            <constraint firstItem="wmp-9C-Waq" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="10" id="dn4-m9-cbI"/>
+                            <constraint firstItem="SlJ-2v-IA5" firstAttribute="centerX" secondItem="wmp-9C-Waq" secondAttribute="centerX" id="iGH-XF-gdw"/>
+                            <constraint firstItem="SlJ-2v-IA5" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="159" id="uLG-qa-rTw"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="G9e-Xm-4yH">
+                        <barButtonItem key="rightBarButtonItem" title="Reset" image="arrowshape.turn.up.left" catalog="system" id="J9s-c6-hOG">
+                            <connections>
+                                <action selector="resetAction:" destination="BYZ-38-t0r" id="DEZ-AQ-s1r"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="playPause" destination="SlJ-2v-IA5" id="7bV-xe-SQV"/>
+                        <outlet property="timerLbl" destination="wmp-9C-Waq" id="utr-nd-eT6"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="962.59541984732823" y="3.5211267605633805"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="azb-mo-ruR">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="Ean-Gb-fLj" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="vqf-qC-alw">
+                        <rect key="frame" x="0.0" y="59" width="393" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="Uol-T6-0bY"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="3bY-Us-A0O" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="35.877862595419849" y="3.5211267605633805"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="arrowshape.turn.up.left" catalog="system" width="128" height="104"/>
+        <image name="icons8-pause-94" width="94" height="94"/>
+        <image name="icons8-play-94" width="94" height="94"/>
+        <systemColor name="labelColor">
+            <color red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+    </resources>
+</document>
